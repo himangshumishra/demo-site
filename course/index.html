@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .baharwala{
+            background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            gap: 10%;
+        }
+
+        .chotu1{
+            height: 50%;
+            margin: 22px;
+            border: 2px solid aqua;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            display: flex;justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to top, #009797 0%, #9348ef 100%);
+            
+        }
+        .chotu2{
+            height: 50%;
+            margin: 22px;
+            border: 2px solid aqua;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            display: flex;justify-content: center;align-items: center;
+            background-image: linear-gradient(180deg, #2a5df5 0%, #009efd 100%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="baharwala">
+        <h3 style="text-align: center; font-size: 2em;"> Piracy woh kya hai?</h3>
+        <div class="chotu1">
+            <h1> Click to get part 1</h1></div>
+        <div class="chotu2">2nd part yeh hai <br>Click kardo mere upar <br>baaki course will be added soon</div>
+    </div>
+    <script>
+        const chotu1Number=document.querySelector(".chotu1")
+        const chotu2Number=document.querySelector(".chotu2")
+        chotu1Number.addEventListener('click',function(){
+            window.location.href='https://mega.nz/folder/ITdXULKJ#FQ0Fvk8SMXvA6vK3NHb7yQ'
+        })
+        chotu2Number.addEventListener('click',function(){
+            window.location.href='https://mega.nz/folder/DV10SaZa#xkrTfQJe7pK0QpG9sLtBxg'
+        })
+        
+    </script>
+</body>
+</html>
