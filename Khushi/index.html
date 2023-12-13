@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Whisper', cursive;
+            background-image: radial-gradient(circle 975px at 2.6% 48.3%, rgba(0, 8, 120, 1) 0%, rgba(95, 184, 224, 1) 99.7%);
+            text-align: center;
+            position: relative;
+        }
+
+        .bigb {
+            height: 100vh;
+            width: 100vw;
+
+        }
+
+        .bhalu {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .bhalu .img1 {
+            height: 99%;
+            width: 99%;
+        }
+
+        .bhalu .img2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            object-fit: cover;
+        }
+
+        .surprise {
+            display: none;
+        }
+
+
+        .birthday-card {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgba(0, 245, 200, 0.296);
+            border: 2px solid #ff1fbf;
+        }
+
+        .birthday-heading {
+            color: #8b554b;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .birthday-message {
+            font-family: 'Poppins', sans-serif;
+            color: #452b2b;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .birthday-image {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+
+            box-shadow: 10px 10px 10px rgba(241, 108, 201, 0.668);
+        }
+
+        .signature {
+            color: #0051ff;
+            font-style: italic;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bigb">
+        <div class="bhalu">
+            <img src="./bhalu.webp" alt="imgop" class="img1">
+            <img src="./click.gif" alt="" class="img2">
+        </div>
+        <div class="surprise">
+            <div class="birthday-card">
+                <div class="birthday-heading">Happy Birthday Khushi!</div>
+                <div class="birthday-message">
+                    Wishing you a day filled with joy, laughter, and all the things you love. May this year bring you
+                    happiness
+                    and success in all your endeavors.
+                </div>
+                <img src="./khushi.jpg" alt="Khushi" class="birthday-image">
+                <div class="signature">Best Wishes from<br>Ananda</div>
+            </div>
+
+
+        </div>
+        <audio id="ad" autoplay="autoplay" hidden="hidden">
+            <source src="./sound.mp3" type="audio/mpeg">
+        </audio>
+
+
+
+
+    </div>
+    <script>
+        const bigb = document.querySelector(".bigb");
+        const bhalu = document.querySelector(".bhalu");
+        const gift = document.querySelector(".surprise");
+        const audio = document.getElementById("ad");
+
+
+    
+
+
+
+        function surprise() {
+            gift.style.display = 'block'
+            audio.play();
+}
+
+
+    
+
+        function hide() {
+            bhalu.style.display = 'none';
+            surprise()
+
+        }
+
+        bhalu.addEventListener('click', hide)
+
+
+    </script>
+</body>
+
+</html>
