@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Mishra's Linktree</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #3498db, #e74c3c, #1abc9c, #f39c12);
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .link-container {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards, neonGlow 1s infinite alternate;
+            border-radius: 15px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes neonGlow {
+            to {
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(59, 255, 59, 0.6), 0 0 30px rgb(251, 229, 59);
+            }
+        }
+    </style>
+</head>
+
+<body class="text-white min-h-screen">
+
+    <div class="container mx-auto py-10">
+        <div class="flex items-center justify-center mb-8">
+            <img src="https://media.licdn.com/dms/image/D5603AQER7-yLcaf6dQ/profile-displayphoto-shrink_800_800/0/1705138719796?e=1710979200&v=beta&t=vQ16k-nmXdDDiXMvZmMf7zrRrvYqV6knglHHXVWBIbg"
+                alt="Mishra_Photo" class="w-20 h-20 rounded-full border-4 border-white shadow-lg">
+        </div>
+
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-extrabold">I'm <br>Himangshu Mishra</h1>
+            <p class="text-gray-300">Connect with me on various platforms</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8">
+            <a href="https://bhalu.lol"
+                class="link-container rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-yellow-500 hover:shadow-lg duration-300">
+                <h2 class="text-xl font-semibold mb-2">Website</h2>
+                <p class="text-gray-600">Visit my personal website</p>
+            </a>
+
+            <a href="https://github.com/himangshumishra"
+                class="link-container rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-500 hover:shadow-lg duration-300">
+                <h2 class="text-xl font-semibold mb-2">Github</h2>
+                <p class="text-gray-600">Visit My Github Profile</p>
+            </a>
+
+            <!-- I will update facebook nd twitter profile later.  -->
+
+            <a href="https://linkedin.com/himangshumishra"
+                class="link-container rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-green-500 hover:shadow-lg duration-300">
+                <h2 class="text-xl font-semibold mb-2">LinkedIn</h2>
+                <p class="text-gray-600">Connect on LinkedIn</p>
+            </a>
+        </div>
+
+        <div class="flex justify-center mt-10">
+
+
+            <a href="https://github.com/himangshumishra" class="mx-2">
+                <i class="fab fa-github fa-2x shadow-md"></i>
+            </a>
+            <a href="https://linkedin.com/i/himangshumishra" class="mx-2">
+                <i class="fab fa-linkedin fa-2x shadow-md"></i>
+            </a>
+        </div>
+
+        <script>
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+
+            function changeColors() {
+                document.body.style.background = `linear-gradient(45deg, ${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
+
+                document.querySelectorAll('.link-container').forEach(link => {
+                    link.style.boxShadow = `0 0 10px ${getRandomColor()}, 0 0 20px ${getRandomColor()}, 0 0 30px ${getRandomColor()}`;
+                    link.style.backgroundColor = getRandomColor();
+                });
+            }
+
+            setInterval(changeColors, 1500);
+        </script>
+</body>
+
+</html>
