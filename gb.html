@@ -11,7 +11,7 @@
   <div id="cont" class="text-white text-center">
     <form onsubmit="event.preventDefault(); boom();">
       <input type="text" placeholder="enter your username" id="ip" class="rounded-xl text-center text-black m-1"> <br>
-      <input type="submit" class="rounded-2xl m-2 text-black p-2">
+      <input type="submit" id="sbmt" class="rounded-2xl m-2 text-black p-2">
     </form>
 
   </div>
@@ -26,6 +26,7 @@
   <script>
 
     let boom = () => {
+      document.getElementById('sbmt').disabled=true;
       let ip = document.getElementById('ip').value;
       let imagedharak = document.querySelector('#imagedharak');
       // let txt = document.getElementById('txt');
@@ -34,33 +35,31 @@
       let txt =document.createElement('div')
       txt.id='newdiv'
       let newdiv = document.querySelector('#newdiv');
-     let prevTxt= document.getElementById('prevTxt');
-
+      let prevTxt= document.getElementById('prevTxt');
+      
       fetch(`https://api.github.com/users/${ip}`)
-        .then(response => response.json())
-        .then(data => {
-          if (image) image.remove();
-          if (prevTxt) prevTxt.remove()
-         if(newdiv) newdiv.remove();
+      .then(response => response.json())
+      .then(data => {
+        if (image) image.remove();
+        if (prevTxt) prevTxt.remove()
+        if(newdiv) newdiv.remove();
           imagedharak.classList.remove('hidden');
           if (data.avatar_url) {
             profileImage.src = data.avatar_url;
             profileImage.className = "h-20 w-20 rounded-full m-5 ";
             imagedharak.appendChild(profileImage);
             txt.innerHTML = `
-        
-        <h1>  Name: ${data.name ?? ' is Not Available For this user'} :) </h1>
-        
-        <h1>  Followers: ${data.followers ?? 0}, <br/> Following: ${data.following ?? 0} </h1>
-        <h1>  Public Repository: ${data.public_repos ??  "Not Available"}</h1>
-        <h1>  Email: ${data.email ??  "Not Available"}</h1>
-        <h1>  Bio: ${data.bio ??  "Not Available"}</h1>
-        
-        <h1>  Location: ${data.location ?? "No Location Available"}</h1>
-
-        
-        
-        `; // here ?? is used to provide a default value if (data.name) is null or undefined
+            
+            <h1>  Name: ${data.name ?? ' is Not Available For this user'} :) </h1>
+            
+            <h1>  Followers: ${data.followers ?? 0}, <br/> Following: ${data.following ?? 0} </h1>
+            <h1>  Public Repository: ${data.public_repos ??  "Not Available"}</h1>
+            <h1>  Email: ${data.email ??  "Not Available"}</h1>
+            <h1>  Bio: ${data.bio ??  "Not Available"}</h1>
+            
+            <h1>  Location: ${data.location ?? "No Location Available"}</h1>
+            
+            `;  // here ?? is used to provide a default value if (data.name) is null or undefined
             
             
             imagedharak.appendChild(txt) 
@@ -70,10 +69,11 @@
             imagedharak.appendChild(txt)
             
           }
+          document.getElementById('sbmt').disabled=false;  
         });
 
     }
-  </script>
+    </script>
 </body>
 
 </html>
