@@ -1,8 +1,4 @@
-
 # demo-site  
 Repository is for testing purposes only.  
-- **Preview Site Link**:  [htps://bhalu.lol](htps://bhalu.lol)   (expired)  
-- **New Index Link**: [htps://rec.mishra.codes](htps://rec.mishra.codes)  
-
----
-
+- **Preview Site Link**: [https://bhalu.lol](https://bhalu.lol) (expired)  
+- **New Index Link**: [https://rec.mishra.codes](https://rec.mishra.codes)  
